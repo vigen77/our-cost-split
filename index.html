@@ -41,44 +41,104 @@
           <span class="chip">Pastry: <span class="mono">$100.00</span></span>
           <span class="chip ok">Grand Total: <span class="mono">$3,688.40</span></span>
         </div>
+
+        <div class="callout">
+          <div class="ok">Restaurant attendance breakdown</div>
+          <ul style="margin:6px 0 0; padding-left: 18px;">
+            <li><span class="ok">Total restaurant attendees:</span> 42 people</li>
+            <li><span class="ok">General guests:</span> 23 people (shared portion; see Rules)</li>
+            <li><span class="ok">Hosts’ parties:</span> 19 people total (paid by hosts; includes family members and any special guests assigned to a host)</li>
+          </ul>
+        </div>
+
         <p class="note">
-          Restaurant headcount: 42 total = 23 guests + 19 hosts/family (V1=1, V2=5, V3=8, V4=4, M=1).
+          Hosts’ parties (19 total) are composed as follows:
+          <br/>
+          V1 = 1
+          <br/>
+          V2 = 4 family members + 1 special guest (total 5)
+          <br/>
+          V3 = 4 family members + 4 special guests (total 8)
+          <br/>
+          V4 = 4
+          <br/>
+          M = 1
         </p>
       </div>
 
       <div class="card">
         <h2 style="margin:0 0 8px; font-size:16px;">2) Allocation Rules (How we split the costs)</h2>
         <ol style="margin:0; padding-left: 18px;">
-          <li><span class="ok">Family restaurant:</span> Each host pays the restaurant cost for their own family size.</li>
-          <li><span class="ok">Guest restaurant:</span> The restaurant cost attributable to 23 guests is split equally among hosts, <span class="ok">except</span> V2 is waived from this portion.</li>
-          <li><span class="ok">Shared non-restaurant:</span> Flowers + Priest gift + Pastry are split equally among hosts, <span class="ok">except</span> V2 is waived from this portion.</li>
-          <li><span class="ok">V2 waiver:</span> V2 pays only the restaurant cost for V2’s 5 people. V2’s waived portion is reallocated equally to V1, V3, and M. V4 stays unchanged.</li>
-          <li><span class="ok">Rounding/pennies:</span> V1 absorbs all rounding pennies so the totals add up exactly to the grand total.</li>
+          <li>
+            <span class="ok">Restaurant – host party portion:</span>
+            Each host pays the restaurant cost for their own party size (family members + any special guests assigned to that host).
+          </li>
+          <li>
+            <span class="ok">Restaurant – general guest portion:</span>
+            The restaurant cost attributable to the 23 general guests is split equally among hosts,
+            <span class="ok">except</span> V2 is waived from this portion.
+          </li>
+          <li>
+            <span class="ok">Shared non-restaurant costs:</span>
+            Flowers + Priest gift + Pastry are split equally among hosts,
+            <span class="ok">except</span> V2 is waived from this portion.
+          </li>
+          <li>
+            <span class="ok">V2 waiver:</span>
+            V2 pays only the restaurant cost for V2’s party (5 people total: 4 family + 1 special guest).
+            V2’s waived portion (general guest share + shared costs) is reallocated equally to V1, V3, and M.
+            V4 remains unchanged.
+          </li>
+          <li><span class="ok">Rounding/pennies:</span> V1 absorbs all rounding pennies so totals add up exactly to the grand total.</li>
         </ol>
+
+        <div class="callout">
+          <div class="ok">Note about “special guests”</div>
+          <div style="margin-top:6px;">
+            Special guests are treated as part of the host’s party for restaurant purposes. Their restaurant cost is paid by that host
+            (not included in the 23 general guests that are shared).
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="card">
       <h2 style="margin:0 0 8px; font-size:16px;">3) Brief Calculation Notes (Simple explanation of the math)</h2>
       <ul style="margin:0; padding-left: 18px;">
-        <li><span class="ok">Restaurant per-person rate:</span> <span class="mono">$2,988.40 ÷ 42</span> (used to assign restaurant cost to each person).</li>
-        <li><span class="ok">Restaurant guest portion:</span> 23 guests × (per-person rate) → split among hosts, then adjusted for V2 waiver.</li>
-        <li><span class="ok">Shared costs:</span> <span class="mono">$300 + $300 + $100 = $700</span> → normally split 5 ways, then adjusted for V2 waiver.</li>
-        <li><span class="ok">V2 waived portion:</span> V2 does not pay (guest share + shared costs). That waived amount is reallocated equally to V1, V3, and M.</li>
+        <li>
+          <span class="ok">Restaurant per-person rate:</span>
+          <span class="mono">$2,988.40 ÷ 42</span> (used to assign restaurant cost per person).
+        </li>
+        <li>
+          <span class="ok">Host party restaurant totals:</span>
+          Each host’s restaurant responsibility includes their party size
+          (family members + special guests assigned to that host).
+        </li>
+        <li>
+          <span class="ok">General guest restaurant total:</span>
+          23 general guests × (per-person rate) → split among hosts, then adjusted for the V2 waiver.
+        </li>
+        <li>
+          <span class="ok">Shared costs:</span>
+          <span class="mono">$300 + $300 + $100 = $700</span> → normally split 5 ways, then adjusted for the V2 waiver.
+        </li>
       </ul>
+
       <div class="callout">
-        <div class="ok">Important:</div>
-        <div>This page shows two things:</div>
+        <div class="ok">What this page shows</div>
         <ul style="margin:6px 0 0; padding-left: 18px;">
-          <li><span class="ok">Allocated Totals</span> = what each host should pay in total (fair share).</li>
-          <li><span class="ok">Settlement</span> = who reimburses whom based on who already paid.</li>
+          <li><span class="ok">Allocated Totals</span> = each host’s fair share after applying the rules.</li>
+          <li><span class="ok">Settlement</span> = who reimburses whom based on who already paid vendors and who already made advances.</li>
         </ul>
       </div>
     </div>
 
     <div class="card">
       <h2 style="margin:0 0 8px; font-size:16px;">4) Final Allocated Amounts (Fair share per person)</h2>
-      <p class="note">These are the final totals each host is responsible for, after the V2 waiver and penny adjustment.</p>
+      <p class="note">
+        The “special guest” clarification changes wording only (party composition), not totals, because V2 still has 5 people
+        and V3 still has 8 people in their party.
+      </p>
       <table aria-label="Final allocated amounts">
         <thead>
           <tr>
@@ -92,10 +152,7 @@
           <tr><td>V3</td><td class="num">$1,192.29</td></tr>
           <tr><td>V4</td><td class="num">$751.91</td></tr>
           <tr><td>M</td><td class="num">$694.22</td></tr>
-          <tr>
-            <td class="ok">Total</td>
-            <td class="num ok">$3,688.40</td>
-          </tr>
+          <tr><td class="ok">Total</td><td class="num ok">$3,688.40</td></tr>
         </tbody>
       </table>
     </div>
@@ -112,21 +169,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>V1</td>
-            <td>Restaurant + Pastry</td>
-            <td class="num">$3,088.40</td>
-          </tr>
-          <tr>
-            <td>V3</td>
-            <td>Flowers + Gift to Priest</td>
-            <td class="num">$600.00</td>
-          </tr>
-          <tr>
-            <td class="ok">Total Paid to Vendors</td>
-            <td></td>
-            <td class="num ok">$3,688.40</td>
-          </tr>
+          <tr><td>V1</td><td>Restaurant + Pastry</td><td class="num">$3,088.40</td></tr>
+          <tr><td>V3</td><td>Flowers + Gift to Priest</td><td class="num">$600.00</td></tr>
+          <tr><td class="ok">Total Paid to Vendors</td><td></td><td class="num ok">$3,688.40</td></tr>
         </tbody>
       </table>
     </div>
@@ -145,27 +190,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>V4</td>
-            <td>V1</td>
-            <td>Cash</td>
-            <td class="num">$500.00</td>
-            <td>Paid in advance (before final allocation)</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>V1</td>
-            <td>Advance</td>
-            <td class="num">$1,000.00</td>
-            <td>Paid in advance (before M knew final allocation)</td>
-          </tr>
-          <tr>
-            <td class="ok">Total Internal Advances to V1</td>
-            <td></td>
-            <td></td>
-            <td class="num ok">$1,500.00</td>
-            <td></td>
-          </tr>
+          <tr><td>V4</td><td>V1</td><td>Cash</td><td class="num">$500.00</td><td>Paid in advance (before final allocation)</td></tr>
+          <tr><td>M</td><td>V1</td><td>Advance</td><td class="num">$1,000.00</td><td>Paid in advance (before M knew final allocation)</td></tr>
+          <tr><td class="ok">Total Internal Advances to V1</td><td></td><td></td><td class="num ok">$1,500.00</td><td></td></tr>
         </tbody>
       </table>
       <p class="note">The settlement section below accounts for these advances so nobody pays twice.</p>
