@@ -3,246 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Event Cost Split – Settlement Summary</title>
+  <title>Event Cost Split – Final Summary</title>
   <style>
-    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e6e6e6; --chip:#f6f6f6; }
-    body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .wrap { max-width: 980px; margin: 28px auto; padding: 0 18px 46px; }
+    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e6e6e6; --chip:#f6f6f6; --soft:#fbfbfb; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .wrap { max-width: 900px; margin: 26px auto; padding: 0 16px 44px; }
     h1 { font-size: 22px; margin: 0 0 6px; }
-    .sub { color: var(--muted); margin: 0 0 18px; }
-    .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px; margin: 12px 0; }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 900px){ .grid { grid-template-columns: 1fr 1fr; } }
-    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { background: #fafafa; font-weight: 600; }
-    .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    h2 { font-size: 16px; margin: 0 0 10px; }
+    p { margin: 8px 0; }
+    .sub { color: var(--muted); margin: 0 0 16px; }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px; margin: 12px 0; background: #fff; }
     .chips { display:flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
-    .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
-    .ok { font-weight: 700; }
-    .small { font-size: 13px; color: var(--muted); }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-    .callout { background:#fbfbfb; border:1px dashed var(--line); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .box { background: var(--soft); border: 1px dashed var(--line); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    li { margin: 4px 0; }
+    .big { font-size: 18px; font-weight: 700; }
+    .ok { font-weight: 700; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    @media (min-width: 760px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .hr { height: 1px; background: var(--line); margin: 10px 0; }
+    .payline { display:flex; justify-content: space-between; gap: 12px; padding: 10px 10px; border: 1px solid var(--line); border-radius: 10px; background:#fff; }
+    .payline strong { font-weight: 800; }
+    .right { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Event Cost Split – Settlement Summary</h1>
-    <p class="sub">Hosts: V1, V2, V3, V4, M • Includes V2 waiver + reimbursement based on who already paid</p>
+    <h1>Event Cost Split – Final Summary</h1>
+    <p class="sub">Hosts: V1, V2, V3, V4, M • Includes V2 waiver + all advances already paid</p>
 
-    <div class="grid">
-      <div class="card">
-        <h2 style="margin:0 0 8px; font-size:16px;">1) Total Costs (What the event actually cost)</h2>
-        <div class="chips">
-          <span class="chip">Restaurant: <span class="mono">$2,988.40</span></span>
-          <span class="chip">Flowers: <span class="mono">$300.00</span></span>
-          <span class="chip">Gift to Priest: <span class="mono">$300.00</span></span>
-          <span class="chip">Pastry: <span class="mono">$100.00</span></span>
-          <span class="chip ok">Grand Total: <span class="mono">$3,688.40</span></span>
-        </div>
-
-        <div class="callout">
-          <div class="ok">Restaurant attendance breakdown</div>
-          <ul style="margin:6px 0 0; padding-left: 18px;">
-            <li><span class="ok">Total restaurant attendees:</span> 42 people</li>
-            <li><span class="ok">General guests:</span> 23 people (shared portion; see Rules)</li>
-            <li><span class="ok">Hosts’ parties:</span> 19 people total (paid by hosts; includes family members and any special guests assigned to a host)</li>
-          </ul>
-        </div>
-
-        <p class="note">
-          Hosts’ parties (19 total) are composed as follows:
-          <br/>
-          V1 = 1
-          <br/>
-          V2 = 4 family members + 1 special guest (total 5)
-          <br/>
-          V3 = 4 family members + 4 special guests (total 8)
-          <br/>
-          V4 = 4
-          <br/>
-          M = 1
-        </p>
+    <div class="card">
+      <h2>1) Total event costs</h2>
+      <div class="chips">
+        <span class="chip">Restaurant: <span class="mono">$2,988.40</span></span>
+        <span class="chip">Flowers: <span class="mono">$300.00</span></span>
+        <span class="chip">Gift to Priest: <span class="mono">$300.00</span></span>
+        <span class="chip">Pastry: <span class="mono">$100.00</span></span>
+        <span class="chip ok">Grand Total: <span class="mono">$3,688.40</span></span>
       </div>
 
-      <div class="card">
-        <h2 style="margin:0 0 8px; font-size:16px;">2) Allocation Rules (How we split the costs)</h2>
-        <ol style="margin:0; padding-left: 18px;">
-          <li>
-            <span class="ok">Restaurant – host party portion:</span>
-            Each host pays the restaurant cost for their own party size (family members + any special guests assigned to that host).
-          </li>
-          <li>
-            <span class="ok">Restaurant – general guest portion:</span>
-            The restaurant cost attributable to the 23 general guests is split equally among hosts,
-            <span class="ok">except</span> V2 is waived from this portion.
-          </li>
-          <li>
-            <span class="ok">Shared non-restaurant costs:</span>
-            Flowers + Priest gift + Pastry are split equally among hosts,
-            <span class="ok">except</span> V2 is waived from this portion.
-          </li>
-          <li>
-            <span class="ok">V2 waiver:</span>
-            V2 pays only the restaurant cost for V2’s party (5 people total: 4 family + 1 special guest).
-            V2’s waived portion (general guest share + shared costs) is reallocated equally to V1, V3, and M.
-            V4 remains unchanged.
-          </li>
-          <li><span class="ok">Rounding/pennies:</span> V1 absorbs all rounding pennies so totals add up exactly to the grand total.</li>
-        </ol>
-
-        <div class="callout">
-          <div class="ok">Note about “special guests”</div>
-          <div style="margin-top:6px;">
-            Special guests are treated as part of the host’s party for restaurant purposes. Their restaurant cost is paid by that host
-            (not included in the 23 general guests that are shared).
-          </div>
+      <div class="box">
+        <div class="ok">Restaurant headcount</div>
+        <ul>
+          <li>Total attendees: <span class="mono">42</span></li>
+          <li>General guests (shared portion): <span class="mono">23</span></li>
+          <li>Hosts’ parties (paid by hosts): <span class="mono">19</span></li>
+        </ul>
+        <div class="muted" style="margin-top:8px;">
+          Hosts’ parties (19) include family members and any <span class="ok">special guests assigned to that host</span>.
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2 style="margin:0 0 8px; font-size:16px;">3) Brief Calculation Notes (Simple explanation of the math)</h2>
-      <ul style="margin:0; padding-left: 18px;">
-        <li><span class="ok">Restaurant per-person rate:</span> <span class="mono">$2,988.40 ÷ 42</span>.</li>
-        <li><span class="ok">Host party restaurant totals:</span> each host pays for their party size (family + special guests).</li>
-        <li><span class="ok">General guest restaurant total:</span> 23 × (per-person rate), then adjusted for the V2 waiver.</li>
-        <li><span class="ok">Shared costs:</span> <span class="mono">$300 + $300 + $100 = $700</span>, then adjusted for the V2 waiver.</li>
+      <h2>2) Who was in each host’s party (restaurant only)</h2>
+      <ul>
+        <li>V1: 1</li>
+        <li>V2: 4 family + 1 special guest (total 5)</li>
+        <li>V3: 4 family + 4 special guests (total 8)</li>
+        <li>V4: 4</li>
+        <li>M: 1</li>
       </ul>
+      <p class="muted">
+        Special guests are treated as part of the host’s party for the restaurant portion (they are not part of the 23 general guests).
+      </p>
+    </div>
 
-      <div class="callout">
-        <div class="ok">What this page shows</div>
-        <ul style="margin:6px 0 0; padding-left: 18px;">
-          <li><span class="ok">Allocated Totals</span> = each host’s fair share after applying the rules.</li>
-          <li><span class="ok">Settlement</span> = who reimburses whom after accounting for vendor payments and any advances already paid.</li>
+    <div class="card">
+      <h2>3) Rules used (plain language)</h2>
+      <ul>
+        <li><span class="ok">Restaurant:</span> Each host pays for their own party size.</li>
+        <li><span class="ok">General guest restaurant portion:</span> cost for the 23 general guests is split equally among the hosts, <span class="ok">except V2 is waived</span>.</li>
+        <li><span class="ok">Shared costs:</span> Flowers + Priest gift + Pastry are split equally among the hosts, <span class="ok">except V2 is waived</span>.</li>
+        <li><span class="ok">V2 waiver:</span> V2 pays only her party’s restaurant cost (5 people). V2’s waived portion is reallocated equally to V1, V3, and M. V4 remains unchanged.</li>
+        <li><span class="ok">Rounding:</span> V1 absorbs any rounding pennies so totals match the grand total exactly.</li>
+      </ul>
+      <p class="muted">Note: The “special guest” update changes wording only. Totals remain the same because V2 still has 5 people and V3 still has 8 people in their party.</p>
+    </div>
+
+    <div class="card">
+      <h2>4) Final allocated totals (each person’s fair share)</h2>
+      <div class="grid">
+        <div class="payline"><div>V1</div><div class="right"><strong>$694.22</strong></div></div>
+        <div class="payline"><div>V2</div><div class="right"><strong>$355.76</strong></div></div>
+        <div class="payline"><div>V3</div><div class="right"><strong>$1,192.29</strong></div></div>
+        <div class="payline"><div>V4</div><div class="right"><strong>$751.91</strong></div></div>
+        <div class="payline"><div>M</div><div class="right"><strong>$694.22</strong></div></div>
+      </div>
+
+      <div class="hr"></div>
+      <div class="payline" style="background: var(--soft);">
+        <div class="ok">Total</div>
+        <div class="right ok">$3,688.40</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>5) What has already been paid</h2>
+
+      <div class="box">
+        <div class="ok">Paid to vendors (covered the actual bills)</div>
+        <ul>
+          <li>V1 paid: Restaurant + Pastry = <span class="mono">$3,088.40</span></li>
+          <li>V3 paid: Flowers + Priest gift = <span class="mono">$600.00</span></li>
+        </ul>
+        <div class="muted" style="margin-top:8px;">These two vendor payments together equal the grand total: <span class="mono">$3,688.40</span>.</div>
+      </div>
+
+      <div class="box">
+        <div class="ok">Internal advances (paid before final allocation)</div>
+        <ul>
+          <li>V4 → V1 (cash): <span class="mono">$500.00</span></li>
+          <li>M → V1 (advance): <span class="mono">$1,000.00</span></li>
+          <li>V3 → V1 (Zelle): <span class="mono">$570.00</span></li>
+        </ul>
+        <div class="muted" style="margin-top:8px;">
+          These advances are credited in the final settlement below so nobody pays twice.
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="ok">Important credit notes</div>
+        <ul>
+          <li>M’s fair share is <span class="mono">$694.22</span>, but M already paid <span class="mono">$1,000.00</span> → V1 must refund M <span class="mono">$305.78</span>.</li>
+          <li>V3’s remaining balance after vendor payment is <span class="mono">$592.29</span>; V3 already paid V1 <span class="mono">$570.00</span> → remaining due from V3 is <span class="mono">$22.29</span>.</li>
         </ul>
       </div>
     </div>
 
     <div class="card">
-      <h2 style="margin:0 0 8px; font-size:16px;">4) Final Allocated Amounts (Fair share per person)</h2>
-      <p class="note">
-        The “special guest” clarification updates wording only. Totals are unchanged because V2 still has 5 people and V3 still has 8 people in their party.
-      </p>
-      <table aria-label="Final allocated amounts">
-        <thead>
-          <tr><th>Host</th><th class="num">Allocated Total</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>V1</td><td class="num">$694.22</td></tr>
-          <tr><td>V2</td><td class="num">$355.76</td></tr>
-          <tr><td>V3</td><td class="num">$1,192.29</td></tr>
-          <tr><td>V4</td><td class="num">$751.91</td></tr>
-          <tr><td>M</td><td class="num">$694.22</td></tr>
-          <tr><td class="ok">Total</td><td class="num ok">$3,688.40</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <h2>6) What to do now (final transfers)</h2>
+      <p class="muted">These transfers complete the settlement, accounting for all advances already paid.</p>
 
-    <div class="card">
-      <h2 style="margin:0 0 8px; font-size:16px;">5) Payments to Vendors Already Made (Who paid the actual bills)</h2>
-      <p class="note">These payments covered the full event cost directly to vendors.</p>
-      <table aria-label="Vendor payments already made">
-        <thead>
-          <tr><th>Who paid</th><th>What was paid</th><th class="num">Amount</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>V1</td><td>Restaurant + Pastry</td><td class="num">$3,088.40</td></tr>
-          <tr><td>V3</td><td>Flowers + Gift to Priest</td><td class="num">$600.00</td></tr>
-          <tr><td class="ok">Total Paid to Vendors</td><td></td><td class="num ok">$3,688.40</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="card">
-      <h2 style="margin:0 0 8px; font-size:16px;">6) Internal Payments Already Made (Advance payments before knowing final shares)</h2>
-      <p class="note">These are payments between hosts (not vendor payments). They are credited against the final settlement.</p>
-      <table aria-label="Internal payments already made">
-        <thead>
-          <tr><th>From</th><th>To</th><th>Method</th><th class="num">Amount</th><th>Note</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>V4</td><td>V1</td><td>Cash</td><td class="num">$500.00</td><td>Paid in advance (before final allocation)</td></tr>
-          <tr><td>M</td><td>V1</td><td>Advance</td><td class="num">$1,000.00</td><td>Paid in advance (before M knew final allocation)</td></tr>
-          <tr><td>V3</td><td>V1</td><td>Zelle</td><td class="num">$570.00</td><td>Paid in advance (before final allocation)</td></tr>
-          <tr><td class="ok">Total Internal Advances to V1</td><td></td><td></td><td class="num ok">$2,070.00</td><td></td></tr>
-        </tbody>
-      </table>
-      <p class="note">The settlement section below accounts for these advances so nobody pays twice.</p>
-    </div>
-
-    <div class="card">
-      <h2 style="margin:0 0 8px; font-size:16px;">7) Settlement (Who pays whom)</h2>
-      <p style="margin:0 0 10px;">
-        Step A: Determine who is owed money based on vendor payments.<br/>
-        Step B: Apply internal advances (already paid to V1) to calculate what remains due or refundable.
-      </p>
-
-      <h3 style="margin:12px 0 6px; font-size:14px;">7A) Net position based only on vendor payments</h3>
-      <p class="note">Net position = (paid to vendors) − (allocated total). Positive = should receive; Negative = should pay.</p>
-      <table aria-label="Settlement table - vendor basis">
-        <thead>
-          <tr><th>Host</th><th class="num">Paid to Vendors</th><th class="num">Allocated Total</th><th class="num">Net (Receive + / Pay −)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>V1</td><td class="num">$3,088.40</td><td class="num">$694.22</td><td class="num ok">+$2,394.18</td></tr>
-          <tr><td>V2</td><td class="num">$0.00</td><td class="num">$355.76</td><td class="num">−$355.76</td></tr>
-          <tr><td>V3</td><td class="num">$600.00</td><td class="num">$1,192.29</td><td class="num">−$592.29</td></tr>
-          <tr><td>V4</td><td class="num">$0.00</td><td class="num">$751.91</td><td class="num">−$751.91</td></tr>
-          <tr><td>M</td><td class="num">$0.00</td><td class="num">$694.22</td><td class="num">−$694.22</td></tr>
-        </tbody>
-      </table>
-
-      <h3 style="margin:14px 0 6px; font-size:14px;">7B) Apply internal advances already paid to V1</h3>
-      <p class="note">
-        V1 is owed <span class="mono">$2,394.18</span> in total (from the vendor-payment net above).
-        V1 already received internal advances totaling <span class="mono">$2,070.00</span>.
-      </p>
-
-      <div class="callout">
-        <div class="ok">Key point about M</div>
-        <div style="margin-top:6px;">
-          M’s allocated total is <span class="mono">$694.22</span>, but M already paid <span class="mono">$1,000.00</span>.
-          Therefore, M overpaid by <span class="mono">$1,000.00 − $694.22 = $305.78</span>,
-          so <span class="ok">V1 must refund M $305.78</span>.
-        </div>
+      <div class="payline"><div>V2 → V1</div><div class="right"><strong>$355.76</strong></div></div>
+      <div style="height:8px;"></div>
+      <div class="payline"><div>V3 → V1</div><div class="right"><strong>$22.29</strong></div></div>
+      <div style="height:8px;"></div>
+      <div class="payline"><div>V4 → V1</div><div class="right"><strong>$251.91</strong></div></div>
+      <div style="height:8px;"></div>
+      <div class="payline" style="background: var(--soft); border-color: #dcdcdc;">
+        <div><span class="ok">V1 → M</span> <span class="muted">(refund)</span></div>
+        <div class="right"><strong>$305.78</strong></div>
       </div>
 
-      <div class="callout">
-        <div class="ok">Key point about V3</div>
-        <div style="margin-top:6px;">
-          V3’s allocated total is <span class="mono">$1,192.29</span>.
-          V3 already paid <span class="mono">$570.00</span> to V1 in advance,
-          so V3’s remaining payment to V1 is <span class="mono">$1,192.29 − $600.00 − $570.00 = $22.29</span>.
-          <span class="small">(Explanation: V3 already covered $600.00 to vendors; the remaining owed is $592.29, and $570.00 of that was already paid to V1.)</span>
-        </div>
+      <div class="box">
+        <div class="ok">Quick check (for peace of mind)</div>
+        <p class="muted" style="margin-top:6px;">
+          Incoming to V1 now: <span class="mono">$355.76 + $22.29 + $251.91 = $629.96</span><br/>
+          Refund from V1 to M: <span class="mono">$305.78</span><br/>
+          Net to V1 now: <span class="mono">$629.96 − $305.78 = $324.18</span>
+        </p>
+        <p class="muted">
+          This matches the remaining amount V1 is still owed after applying all internal advances.
+        </p>
       </div>
-
-      <h3 style="margin:14px 0 6px; font-size:14px;">Recommended remaining transfers (final)</h3>
-      <p style="margin:0 0 8px;">
-        These transfers settle everything while properly crediting advances already paid.
-      </p>
-      <ul style="margin:0; padding-left: 18px;">
-        <li>V2 → V1: <span class="mono">$355.76</span></li>
-        <li>V3 → V1: <span class="mono">$22.29</span> <span class="small">(remaining after $570.00 Zelle advance)</span></li>
-        <li>V4 → V1: <span class="mono">$251.91</span> <span class="small">(remaining after $500.00 cash advance)</span></li>
-        <li><span class="ok">V1 → M: <span class="mono">$305.78</span></span> <span class="small">(refund, because M overpaid)</span></li>
-      </ul>
-
-      <p class="note">
-        Check 1 (V1 remaining to receive after internal advances):<br/>
-        V1 is owed <span class="mono">$2,394.18</span> and already received <span class="mono">$2,070.00</span> → remaining owed to V1 is
-        <span class="mono">$2,394.18 − $2,070.00 = $324.18</span>.<br/><br/>
-        Check 2 (net of the remaining transfers):<br/>
-        Amounts coming to V1: <span class="mono">$355.76 + $22.29 + $251.91 = $629.96</span><br/>
-        Refund paid by V1 to M: <span class="mono">$305.78</span><br/>
-        Net to V1: <span class="mono">$629.96 − $305.78 = $324.18</span> ✅
-      </p>
     </div>
 
-    <p class="small">
-      Document prepared for sharing. If any input number changes (headcount, totals, waiver rule, or additional payments), update the figures accordingly.
+    <p class="muted">
+      If any inputs change (costs, headcounts, waiver rules, or additional payments), this page must be updated accordingly.
     </p>
   </div>
 </body>
