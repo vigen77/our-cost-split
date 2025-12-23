@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Cost Split – Settlement Summary</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --bg:#fff; --line:#e6e6e6; --chip:#f6f6f6; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .wrap { max-width: 920px; margin: 28px auto; padding: 0 18px 40px; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    .sub { color: var(--muted); margin: 0 0 18px; }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px; margin: 12px 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 840px){ .grid { grid-template-columns: 1fr 1fr; } }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #fafafa; font-weight: 600; }
+    .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .chips { display:flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip { background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    .ok { font-weight: 700; }
+    .small { font-size: 13px; color: var(--muted); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Event Cost Split – Settlement Summary</h1>
+    <p class="sub">Hosts: V1, V2, V3, V4, M • Includes V2 waiver + reimbursement based on who already paid</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin:0 0 8px; font-size:16px;">Costs</h2>
+        <div class="chips">
+          <span class="chip">Restaurant: <span class="mono">$2,988.40</span></span>
+          <span class="chip">Flowers: <span class="mono">$300.00</span></span>
+          <span class="chip">Gift to Priest: <span class="mono">$300.00</span></span>
+          <span class="chip">Pastry: <span class="mono">$100.00</span></span>
+          <span class="chip ok">Grand Total: <span class="mono">$3,688.40</span></span>
+        </div>
+        <p class="note">Restaurant headcount: 42 total = 23 guests + 19 hosts/family (V1=1, V2=5, V3=8, V4=4, M=1).</p>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px; font-size:16px;">Rules</h2>
+        <ol style="margin:0; padding-left: 18px;">
+          <li>Each host pays their own family’s restaurant share.</li>
+          <li>Guest restaurant share is split equally among hosts, <span class="ok">except</span> V2 is waived from this portion.</li>
+          <li>Non-restaurant shared costs (flowers + priest gift + pastry) are split equally among hosts, <span class="ok">except</span> V2 is waived from this portion.</li>
+          <li>V2 pays only her family restaurant cost (5 people). V2’s waived portion is reallocated equally among V1, V3, and M. V4 remains unchanged.</li>
+          <li>Rounding/pennies: <span class="ok">V1 absorbs all rounding pennies</span> so totals match the grand total exactly.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px; font-size:16px;">Brief Calculation Notes</h2>
+      <ul style="margin:0; padding-left: 18px;">
+        <li>Restaurant per-person rate = <span class="mono">2,988.40 ÷ 42</span>.</li>
+        <li>Guest restaurant total = <span class="mono">23 × (per-person rate)</span>, split among 5 hosts, then adjusted for the V2 waiver.</li>
+        <li>Shared costs total = <span class="mono">300 + 300 + 100 = 700</span>, normally split 5 ways, then adjusted for the V2 waiver.</li>
+        <li>V2 waived portion = (V2 guest share + V2 shared-cost share) and is reallocated equally to V1, V3, and M.</li>
+      </ul>
+      <p class="note">All results below are final, rounded to cents, with V1 adjusted to absorb all rounding pennies.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px; font-size:16px;">Final Allocated Amounts (What each person should pay in total)</h2>
+      <table aria-label="Final allocated amounts">
+        <thead>
+          <tr>
+            <th>Host</th>
+            <th class="num">Allocated Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>V1</td><td class="num">$694.22</td></tr>
+          <tr><td>V2</td><td class="num">$355.76</td></tr>
+          <tr><td>V3</td><td class="num">$1,192.29</td></tr>
+          <tr><td>V4</td><td class="num">$751.91</td></tr>
+          <tr><td>M</td><td class="num">$694.22</td></tr>
+          <tr>
+            <td class="ok">Total</td>
+            <td class="num ok">$3,688.40</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px; font-size:16px;">Payments to Vendors Already Made</h2>
+      <table aria-label="Payments already made">
+        <thead>
+          <tr>
+            <th>Who paid</th>
+            <th>What was paid</th>
+            <th class="num">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>V1</td>
+            <td>Restaurant + Pastry</td>
+            <td class="num">$3,088.40</td>
+          </tr>
+          <tr>
+            <td>V3</td>
+            <td>Flowers + Gift to Priest</td>
+            <td class="num">$600.00</td>
+          </tr>
+          <tr>
+            <td class="ok">Total Paid</td>
+            <td></td>
+            <td class="num ok">$3,688.40</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Since V1 and V3 covered the entire grand total, the settlement below shows how the others reimburse them.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px; font-size:16px;">Internal Payment Recorded (Pre-payment)</h2>
+      <table aria-label="Internal payments already made">
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Method</th>
+            <th class="num">Amount</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>V4</td>
+            <td>V1</td>
+            <td>Cash</td>
+            <td class="num">$500.00</td>
+            <td>Paid in advance (before final allocation was calculated)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">This advance payment is credited against V4’s final allocated balance.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px; font-size:16px;">Settlement (Who pays whom)</h2>
+      <p style="margin:0 0 10px;">
+        Net position = <span class="mono">(Amount paid to vendors)</span> − <span class="mono">(Allocated total)</span>.
+        Positive = should receive; Negative = should pay.
+      </p>
+
+      <table aria-label="Settlement table">
+        <thead>
+          <tr>
+            <th>Host</th>
+            <th class="num">Paid to Vendors</th>
+            <th class="num">Allocated Total</th>
+            <th class="num">Net (Receive + / Pay −)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>V1</td><td class="num">$3,088.40</td><td class="num">$694.22</td><td class="num ok">+$2,394.18</td></tr>
+          <tr><td>V2</td><td class="num">$0.00</td><td class="num">$355.76</td><td class="num">−$355.76</td></tr>
+          <tr><td>V3</td><td class="num">$600.00</td><td class="num">$1,192.29</td><td class="num">−$592.29</td></tr>
+          <tr><td>V4</td><td class="num">$0.00</td><td class="num">$751.91</td><td class="num">−$751.91</td></tr>
+          <tr><td>M</td><td class="num">$0.00</td><td class="num">$694.22</td><td class="num">−$694.22</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin:14px 0 6px; font-size:14px;">Recommended remaining transfers</h3>
+      <p style="margin:0 0 8px;">
+        The transfers below settle all balances. V4’s transfer is reduced because V4 already paid
+        <span class="mono">$500.00</span> cash to V1 in advance.
+      </p>
+      <ul style="margin:0; padding-left: 18px;">
+        <li>V2 → V1: <span class="mono">$355.76</span></li>
+        <li>V3 → V1: <span class="mono">$592.29</span></li>
+        <li>V4 → V1: <span class="mono">$251.91</span> <span class="small">(remaining after $500.00 advance cash)</span></li>
+        <li>M → V1: <span class="mono">$694.22</span></li>
+      </ul>
+
+      <p class="note">
+        Check (remaining owed to V1): <span class="mono">$355.76 + $592.29 + $251.91 + $694.22 = $1,894.18</span><br/>
+        Add V4 advance cash already paid: <span class="mono">$500.00</span> → total received by V1 will be
+        <span class="mono">$1,894.18 + $500.00 = $2,394.18</span>.
+      </p>
+    </div>
+
+    <p class="small">
+      Document prepared for sharing. If any input number changes (headcount, totals, waiver rule, or additional payments), recompute all sections.
+    </p>
+  </div>
+</body>
+</html>
