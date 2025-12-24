@@ -34,7 +34,7 @@
 <body>
   <div class="wrap">
     <h1>Event Cost Split – Detailed Calculations + Settlement</h1>
-    <p class="sub">Hosts: V1, V2, V3, V4, M • Includes V2 waiver, special guests, and all advances already paid</p>
+    <p class="sub">Hosts: V1, V2, V3, V4 • Includes V2 waiver, special guests, and all advances already paid</p>
 
     <!-- 1) Inputs -->
     <div class="card">
@@ -51,21 +51,20 @@
         <div class="ok">Restaurant attendance</div>
         <ul>
           <li>Total attendees: <span class="mono">42</span></li>
-          <li><span class="ok">General guests</span> (shared portion): <span class="mono">23</span></li>
-          <li><span class="ok">Hosts’ parties</span> (paid by hosts): <span class="mono">19</span></li>
+          <li><span class="ok">General guests</span> (shared portion): <span class="mono">24</span> <span class="muted">(includes M)</span></li>
+          <li><span class="ok">Hosts’ parties</span> (paid by hosts): <span class="mono">18</span></li>
         </ul>
         <p class="note">
-          “Special guests” are treated as part of the host’s party for restaurant purposes (not part of the 23 general guests).
+          “Special guests” are treated as part of the host’s party for restaurant purposes (not part of the general guests).
         </p>
       </div>
 
-      <h3>Hosts’ parties (19 total)</h3>
+      <h3>Hosts’ parties (18 total)</h3>
       <ul>
         <li>V1: 1</li>
         <li>V2: 4 family + 1 special guest (total 5)</li>
         <li>V3: 4 family + 4 special guests (total 8)</li>
         <li>V4: 4</li>
-        <li>M: 1</li>
       </ul>
     </div>
 
@@ -74,10 +73,10 @@
       <h2>2) Rules (plain language)</h2>
       <ul>
         <li><span class="ok">Restaurant – host party:</span> each host pays for their own party size (family + special guests assigned to them).</li>
-        <li><span class="ok">Restaurant – general guest portion:</span> the restaurant cost attributable to 23 general guests is split equally among the 5 hosts, <span class="ok">except V2 is waived</span>.</li>
-        <li><span class="ok">Shared (non-restaurant) costs:</span> flowers + priest gift + pastry are split equally among the 5 hosts, <span class="ok">except V2 is waived</span>.</li>
-        <li><span class="ok">V2 waiver:</span> V2 pays only V2’s host-party restaurant cost (5 people). V2’s waived portion (general guest share + shared costs) is reallocated equally to V1, V3, and M. V4 remains unchanged.</li>
-        <li><span class="ok">Rounding:</span> V1 absorbs rounding pennies so all totals add up exactly to <span class="mono">$3,688.40</span>.</li>
+        <li><span class="ok">Restaurant – general guest portion:</span> the restaurant cost attributable to the <span class="mono">24</span> general guests is split equally among the 4 hosts, <span class="ok">except V2 is waived</span>.</li>
+        <li><span class="ok">Shared (non-restaurant) costs:</span> flowers + priest gift + pastry are split equally among the 4 hosts, <span class="ok">except V2 is waived</span>.</li>
+        <li><span class="ok">V2 waiver:</span> V2 pays only V2’s host-party restaurant cost (5 people). V2’s waived portion (general guest share + shared costs) is reallocated equally to <span class="ok">V1 and V3</span>. V4 remains unchanged.</li>
+        <li><span class="ok">Rounding:</span> any unavoidable rounding pennies are absorbed by V1 so totals match exactly.</li>
       </ul>
     </div>
 
@@ -89,9 +88,6 @@
         <div class="ok">Per-person restaurant rate</div>
         <p class="muted" style="margin-top:6px;">
           Restaurant per-person rate = <span class="mono">$2,988.40 ÷ 42 = $71.15238095...</span>
-        </p>
-        <p class="note">
-          For display and payment, amounts are rounded to cents. Any unavoidable rounding pennies are assigned to V1 per the rule above.
         </p>
       </div>
 
@@ -110,20 +106,44 @@
           <tr><td>V2</td><td>5</td><td class="num">5 × 71.15238...</td><td class="num">$355.76</td></tr>
           <tr><td>V3</td><td>8</td><td class="num">8 × 71.15238...</td><td class="num">$569.22</td></tr>
           <tr><td>V4</td><td>4</td><td class="num">4 × 71.15238...</td><td class="num">$284.61</td></tr>
-          <tr><td>M</td><td>1</td><td class="num">1 × 71.15238...</td><td class="num">$71.15</td></tr>
         </tbody>
       </table>
 
-      <h3>3B) General guest restaurant portion (23 people) and equal share per host</h3>
-      <div class="box">
-        <p class="muted" style="margin:0;">
-          General guest restaurant total = <span class="mono">23 × $71.15238095... = $1,636.5047619...</span> ≈ <span class="mono">$1,636.50</span><br/>
-          General guest share per host (5 hosts) = <span class="mono">$1,636.50 ÷ 5 = $327.30</span>
+      <h3>3B) General guest restaurant portion (24 people) and equal share per host</h3>
+      <div class="box" style="border-style: solid; background:#fff;">
+        <p style="margin:0; font-size:15px;">
+          <strong>General guest restaurant total</strong> =
+          <span class="mono"><strong>24 × $71.15238… ≈ $1,707.66</strong></span><br/>
+          <strong>General guest share per host (4 hosts)</strong> =
+          <span class="mono"><strong>$1,707.66 ÷ 4 = $426.915…</strong></span>
         </p>
         <p class="note">
-          This <span class="mono">$327.30</span> is normally charged to each host, but V2 is waived from this portion.
+          For cents accuracy, this is recorded as two hosts at <span class="mono">$426.92</span> and two hosts at <span class="mono">$426.91</span>.
+          V2 is waived from this portion.
         </p>
       </div>
+
+      <table aria-label="General guest restaurant share by host">
+        <thead>
+          <tr>
+            <th>Host</th>
+            <th class="num">Normal share (before waiver)</th>
+            <th class="num">Final charged</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>V1</td><td class="num">$426.92</td><td class="num"><strong>$640.38</strong></td></tr>
+          <tr><td>V2</td><td class="num">$426.91</td><td class="num"><strong>$0.00</strong></td></tr>
+          <tr><td>V3</td><td class="num">$426.91</td><td class="num"><strong>$640.36</strong></td></tr>
+          <tr><td>V4</td><td class="num">$426.92</td><td class="num"><strong>$426.92</strong></td></tr>
+          <tr><td class="ok">Total</td><td></td><td class="num ok"><strong>$1,707.66</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        Explanation of the “Final charged” column: V2’s waived guest-share (<span class="mono">$426.91</span>) is split between V1 and V3.
+        V4 remains unchanged.
+      </p>
     </div>
 
     <!-- 4) Shared costs -->
@@ -131,125 +151,64 @@
       <h2>4) Shared (non-restaurant) costs</h2>
       <div class="box">
         <p class="muted" style="margin:0;">
-          Shared costs total = <span class="mono">$300 + $300 + $100 = $700</span><br/>
-          Normal share per host (5 hosts) = <span class="mono">$700 ÷ 5 = $140.00</span>
+          Shared costs total = <span class="mono">$300 + $300 + $100 = $700.00</span><br/>
+          Normal share per host (4 hosts) = <span class="mono">$700 ÷ 4 = $175.00</span>
         </p>
-        <p class="note">This <span class="mono">$140.00</span> is normally charged to each host, but V2 is waived from this portion.</p>
+        <p class="note">V2 is waived from shared costs. V2’s waived <span class="mono">$175.00</span> is split equally between V1 and V3. V4 remains unchanged.</p>
       </div>
     </div>
 
     <!-- 5) V2 waiver math -->
     <div class="card">
       <h2>5) V2 waiver and reallocation</h2>
-      <p>
-        V2 pays only V2’s host-party restaurant cost (<span class="mono">$355.76</span>).
-        V2 does not pay the general-guest share (<span class="mono">$327.30</span>) or shared costs (<span class="mono">$140.00</span>).
-      </p>
 
       <div class="box">
-        <div class="ok">Waived amount from V2</div>
+        <div class="ok">V2 pays only</div>
         <p class="muted" style="margin-top:6px;">
-          Waived amount = <span class="mono">$327.30 + $140.00 = $467.30</span><br/>
-          Reallocated equally to: V1, V3, and M
-        </p>
-        <p class="note">
-          Equal split is <span class="mono">$467.30 ÷ 3 = $155.766...</span>. To keep cents exact, we assign cents so the total equals $467.30
-          and then apply the “V1 absorbs pennies” rule.
+          V2 host-party restaurant cost = <span class="mono">$355.76</span>
         </p>
       </div>
 
-      <table aria-label="V2 waived reallocation">
-        <thead>
-          <tr>
-            <th>Recipient</th>
-            <th class="num">Reallocated amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>V1</td><td class="num">$155.76</td></tr>
-          <tr><td>V3</td><td class="num">$155.77</td></tr>
-          <tr><td>M</td><td class="num">$155.77</td></tr>
-          <tr><td class="ok">Total reallocated</td><td class="num ok">$467.30</td></tr>
-        </tbody>
-      </table>
-
-      <p class="note">
-        A separate <span class="mono">$0.01</span> rounding adjustment is applied to V1 (shown in the allocation table below) so the grand total matches exactly.
-      </p>
+      <div class="box">
+        <div class="ok">V2 waived amount (not paid by V2)</div>
+        <p class="muted" style="margin-top:6px;">
+          Waived general-guest share = <span class="mono">$426.91</span><br/>
+          Waived shared costs = <span class="mono">$175.00</span><br/>
+          <span class="ok">Total waived by V2</span> = <span class="mono ok">$601.91</span>
+        </p>
+        <p class="note">
+          This <span class="mono">$601.91</span> is reallocated to V1 and V3 (V4 unchanged):
+          V1 gets <span class="mono">$300.96</span> and V3 gets <span class="mono">$300.95</span> (one-cent rounding absorbed by V1).
+        </p>
+      </div>
     </div>
 
-    <!-- 6) Allocated totals with full breakdown -->
+    <!-- 6) Allocated totals -->
     <div class="card">
       <h2>6) Final allocated totals (full breakdown by person)</h2>
-      <p class="muted">
-        Each host’s allocated total is the sum of: (A) host-party restaurant, (B) general guest share (if applicable),
-        (C) shared costs (if applicable), (D) V2 waiver reallocation (if applicable), and (E) rounding adjustment (V1 only).
-      </p>
 
       <table aria-label="Allocated totals detailed">
         <thead>
           <tr>
             <th>Host</th>
-            <th class="num">A) Party restaurant</th>
-            <th class="num">B) Guest share</th>
-            <th class="num">C) Shared costs</th>
-            <th class="num">D) V2 waiver realloc.</th>
-            <th class="num">E) Rounding</th>
+            <th class="num">Party restaurant</th>
+            <th class="num">General guest share</th>
+            <th class="num">Shared costs</th>
             <th class="num ok">Allocated total</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>V1</td>
-            <td class="num">$71.15</td>
-            <td class="num">$327.30</td>
-            <td class="num">$140.00</td>
-            <td class="num">$155.76</td>
-            <td class="num">$0.01</td>
-            <td class="num ok">$694.22</td>
-          </tr>
-          <tr>
-            <td>V2</td>
-            <td class="num">$355.76</td>
-            <td class="num">$0.00</td>
-            <td class="num">$0.00</td>
-            <td class="num">$0.00</td>
-            <td class="num">$0.00</td>
-            <td class="num ok">$355.76</td>
-          </tr>
-          <tr>
-            <td>V3</td>
-            <td class="num">$569.22</td>
-            <td class="num">$327.30</td>
-            <td class="num">$140.00</td>
-            <td class="num">$155.77</td>
-            <td class="num">$0.00</td>
-            <td class="num ok">$1,192.29</td>
-          </tr>
-          <tr>
-            <td>V4</td>
-            <td class="num">$284.61</td>
-            <td class="num">$327.30</td>
-            <td class="num">$140.00</td>
-            <td class="num">$0.00</td>
-            <td class="num">$0.00</td>
-            <td class="num ok">$751.91</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td class="num">$71.15</td>
-            <td class="num">$327.30</td>
-            <td class="num">$140.00</td>
-            <td class="num">$155.77</td>
-            <td class="num">$0.00</td>
-            <td class="num ok">$694.22</td>
-          </tr>
-          <tr>
-            <td class="ok">Total</td>
-            <td class="num ok" colspan="6">$3,688.40</td>
-          </tr>
+          <tr><td>V1</td><td class="num">$71.15</td><td class="num">$640.38</td><td class="num">$262.50</td><td class="num ok">$974.03</td></tr>
+          <tr><td>V2</td><td class="num">$355.76</td><td class="num">$0.00</td><td class="num">$0.00</td><td class="num ok">$355.76</td></tr>
+          <tr><td>V3</td><td class="num">$569.22</td><td class="num">$640.36</td><td class="num">$262.50</td><td class="num ok">$1,472.08</td></tr>
+          <tr><td>V4</td><td class="num">$284.61</td><td class="num">$426.92</td><td class="num">$175.00</td><td class="num ok">$886.53</td></tr>
+          <tr><td class="ok">Total</td><td class="num ok" colspan="4">$3,688.40</td></tr>
         </tbody>
       </table>
+
+      <p class="note">
+        Shared costs for V1 and V3 are <span class="mono">$175.00</span> normal share + <span class="mono">$87.50</span> reallocated from V2 = <span class="mono">$262.50</span>.
+      </p>
     </div>
 
     <!-- 7) Payments already made -->
@@ -263,10 +222,9 @@
       </ul>
       <p class="note">These vendor payments sum to the grand total: <span class="mono">$3,688.40</span>.</p>
 
-      <h3>7B) Internal advances paid to V1 (before the final calculation)</h3>
+      <h3>7B) Internal payments already made (between hosts)</h3>
       <ul>
         <li>V4 → V1 (cash): <span class="mono">$500.00</span></li>
-        <li>M → V1 (advance): <span class="mono">$1,000.00</span></li>
         <li>V3 → V1 (Zelle): <span class="mono">$570.00</span></li>
       </ul>
       <p class="note">These are credited in the settlement below so nobody pays twice.</p>
@@ -279,29 +237,23 @@
       <div class="box">
         <div class="ok">Remaining balances after credits</div>
         <ul>
-          <li>V2 owes V1: <span class="mono">$355.76</span> (no prior payments recorded)</li>
-          <li>V4 owes V1: <span class="mono">$751.91 − $500.00 = $251.91</span></li>
-          <li>V3 owes (after paying vendors and advance): <span class="mono">$1,192.29 − $600.00 − $570.00 = $22.29</span></li>
-          <li>M overpaid (refund due from V1): <span class="mono">$1,000.00 − $694.22 = $305.78</span></li>
+          <li>V2 owes V1: <span class="mono">$355.76</span></li>
+          <li>V4 owes V1: <span class="mono">$886.53 − $500.00 = $386.53</span></li>
+          <li>V3 owes V1 (after vendor payment + Zelle advance): <span class="mono">$1,472.08 − $600.00 − $570.00 = $302.08</span></li>
         </ul>
       </div>
 
       <h3>Final transfers to complete settlement</h3>
       <div class="payline"><div>V2 → V1</div><div class="right"><span class="ok">$355.76</span></div></div>
       <div style="height:8px;"></div>
-      <div class="payline"><div>V3 → V1</div><div class="right"><span class="ok">$22.29</span></div></div>
+      <div class="payline"><div>V3 → V1</div><div class="right"><span class="ok">$302.08</span></div></div>
       <div style="height:8px;"></div>
-      <div class="payline"><div>V4 → V1</div><div class="right"><span class="ok">$251.91</span></div></div>
-      <div style="height:8px;"></div>
-      <div class="payline" style="background: var(--soft);">
-        <div><span class="ok">V1 → M</span> <span class="muted">(refund)</span></div>
-        <div class="right"><span class="ok">$305.78</span></div>
-      </div>
+      <div class="payline"><div>V4 → V1</div><div class="right"><span class="ok">$386.53</span></div></div>
 
       <p class="note">
-        Net check: incoming to V1 now = <span class="mono">$355.76 + $22.29 + $251.91 = $629.96</span>;
-        refund from V1 to M = <span class="mono">$305.78</span>;
-        net to V1 now = <span class="mono">$629.96 − $305.78 = $324.18</span>.
+        Net check: incoming to V1 now =
+        <span class="mono">$355.76 + $302.08 + $386.53 = $1,044.37</span>.
+        This equals the remaining amount V1 is owed after accounting for vendor payments and prior internal payments already received.
       </p>
     </div>
 
